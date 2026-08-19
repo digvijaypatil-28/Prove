@@ -1,5 +1,8 @@
 services:
 
+  # ==========================================
+  # PROVE BACKEND - FastAPI
+  # ==========================================
   - type: web
     name: prove-backend
     runtime: python
@@ -23,10 +26,12 @@ services:
         value: sqlite:///./prove.db
 
 
+  # ==========================================
+  # PROVE FRONTEND - React + Vite
+  # ==========================================
   - type: web
     name: prove-frontend
     runtime: static
-    plan: free
     rootDir: frontend
 
     buildCommand: npm ci && npm run build
