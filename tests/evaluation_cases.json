@@ -1,0 +1,161 @@
+[
+  {
+    "id": "CASE_1",
+    "title": "Strong Evidence - Senior Data Engineer",
+    "input": {
+      "target_role": "Senior Data Engineer",
+      "target_domain": "Data Infrastructure",
+      "claimed_skills": ["Python", "SQL", "Docker", "PostgreSQL"],
+      "experience_description": "I built a real-time data ingestion pipeline using Python and Docker. I wrote complex analytical SQL queries in PostgreSQL, automated ETL schedules, and created automated schema migrations.",
+      "project_name": "Realtime Pipeline",
+      "outcome": "Reduced pipeline latency by 45% and processed over 1M records daily.",
+      "evidence_links": "https://github.com/example/realtime-pipeline",
+      "evidence_description": "Public GitHub repository with Python source code, Dockerfile, and benchmark report.",
+      "ai_usage": "AI-assisted"
+    },
+    "expected": {
+      "python_status": "PROVEN",
+      "sql_status": "PROVEN",
+      "minimum_quality_score": 75.0,
+      "quality_label_in": ["Strong", "Very Strong"]
+    }
+  },
+  {
+    "id": "CASE_2",
+    "title": "Claimed Skill Without Evidence",
+    "input": {
+      "target_role": "Junior Data Analyst",
+      "target_domain": "Data Analytics",
+      "claimed_skills": ["Python", "SQL", "Excel"],
+      "experience_description": "I cleaned 20,000 sales records using Excel and wrote SQL queries to analyze customer purchases.",
+      "project_name": "Sales Dashboard",
+      "outcome": "Identified declining product categories.",
+      "evidence_links": "",
+      "evidence_description": "",
+      "ai_usage": "Not specified"
+    },
+    "expected": {
+      "sql_status": "PROVEN",
+      "excel_status": "PROVEN",
+      "python_status": "CLAIMED",
+      "python_has_proof_gap": true
+    }
+  },
+  {
+    "id": "CASE_3",
+    "title": "Weak Evidence",
+    "input": {
+      "target_role": "Project Manager",
+      "target_domain": "Tech Management",
+      "claimed_skills": ["Jira", "Agile", "Python"],
+      "experience_description": "Worked on a software project with a team.",
+      "project_name": "",
+      "outcome": "",
+      "evidence_links": "",
+      "evidence_description": "",
+      "ai_usage": "Not specified"
+    },
+    "expected": {
+      "quality_label": "Weak",
+      "maximum_quality_score": 45.0
+    }
+  },
+  {
+    "id": "CASE_4",
+    "title": "Unsupported Numerical Claim",
+    "input": {
+      "target_role": "Marketing Analyst",
+      "target_domain": "Growth Analytics",
+      "claimed_skills": ["Google Analytics", "Excel", "Python"],
+      "experience_description": "I increased sales by 40% and improved customer conversion.",
+      "project_name": "Growth Strategy",
+      "outcome": "40% revenue growth",
+      "evidence_links": "",
+      "evidence_description": "",
+      "ai_usage": "Not specified"
+    },
+    "expected": {
+      "python_status": "CLAIMED",
+      "verifiability_score_max": 40.0,
+      "unsupported_claim_retained": true
+    }
+  },
+  {
+    "id": "CASE_5",
+    "title": "Multiple Skills with Mixed Evidence",
+    "input": {
+      "target_role": "Full Stack Developer",
+      "target_domain": "Web Development",
+      "claimed_skills": ["React", "TypeScript", "Python", "FastAPI", "Docker", "Kubernetes"],
+      "experience_description": "Built a responsive web dashboard using React and TypeScript. Connected frontend to a Python FastAPI backend.",
+      "project_name": "Web Portal",
+      "outcome": "Deployed portal serving 500 users.",
+      "evidence_links": "https://github.com/example/web-portal",
+      "evidence_description": "GitHub repository",
+      "ai_usage": "AI-assisted"
+    },
+    "expected": {
+      "react_status": "PROVEN",
+      "python_status": "PROVEN",
+      "fastapi_status": "PROVEN",
+      "kubernetes_status": "CLAIMED"
+    }
+  },
+  {
+    "id": "CASE_6",
+    "title": "AI-Assisted Project",
+    "input": {
+      "target_role": "AI Solutions Architect",
+      "target_domain": "Applied AI",
+      "claimed_skills": ["Python", "Gemini API", "Prompt Engineering"],
+      "experience_description": "Leveraged AI coding tools to develop a prototype using Python and Gemini API for automated summary generation.",
+      "project_name": "Summarizer AI",
+      "outcome": "Automated document summarization.",
+      "evidence_links": "https://github.com/example/ai-summarizer",
+      "evidence_description": "GitHub code repository",
+      "ai_usage": "AI-generated"
+    },
+    "expected": {
+      "python_status": "PROVEN",
+      "ai_usage_declared": "AI-generated"
+    }
+  },
+  {
+    "id": "CASE_7",
+    "title": "Insufficient Experience Text",
+    "input": {
+      "target_role": "Data Scientist",
+      "target_domain": "AI/ML",
+      "claimed_skills": ["Python"],
+      "experience_description": "Did data",
+      "project_name": "",
+      "outcome": "",
+      "evidence_links": "",
+      "evidence_description": "",
+      "ai_usage": "Not specified"
+    },
+    "expected": {
+      "validation_failure_or_claimed": true
+    }
+  },
+  {
+    "id": "CASE_8",
+    "title": "Conflicting or Ambiguous Evidence",
+    "input": {
+      "target_role": "Backend Engineer",
+      "target_domain": "Backend Systems",
+      "claimed_skills": ["Rust", "Go", "Python"],
+      "experience_description": "Our company migrated services to Rust. I wrote Python scripts to monitor server logs during migration.",
+      "project_name": "Server Migration",
+      "outcome": "Migration finished.",
+      "evidence_links": "",
+      "evidence_description": "",
+      "ai_usage": "Not specified"
+    },
+    "expected": {
+      "python_status": "PROVEN",
+      "rust_status": "IMPLIED",
+      "go_status": "CLAIMED"
+    }
+  }
+]

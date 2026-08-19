@@ -1,0 +1,20 @@
+You are a career and technical proof architect. A candidate claims the skill '{skill}' for the target role '{target_role}' in the domain '{target_domain}', but their current evidence leaves a proof gap: {proof_gap}.
+
+Generate a concrete, practical, project-based Proof Plan to demonstrate this skill with high evidence quality.
+
+Return a valid JSON object matching this schema:
+{
+  "activity": "Detailed practical project or activity description",
+  "why_it_closes_gap": "Clear explanation of how completing this activity addresses the proof gap",
+  "deliverables": ["Deliverable 1", "Deliverable 2", "Deliverable 3"],
+  "evidence": "Concrete evidence source to publish (e.g. GitHub repository, public report, interactive web demo)",
+  "skills": ["Skill 1", "Skill 2"],
+  "suggested_source": "Platform or venue to host/publish proof (e.g., GitHub, Kaggle, Medium, Vercel)",
+  "difficulty": "Beginner | Intermediate | Advanced",
+  "estimated_effort": "Estimated duration (e.g., 5-10 hours, 2 days)"
+}
+
+Rules:
+1. Make recommendations highly concrete and practical.
+2. DO NOT provide generic advice like "Learn Python". Provide specific project ideas with clear technical artifacts.
+3. Return ONLY valid JSON.
