@@ -1,6 +1,6 @@
 import { ProofAnalysisRequest, ProofAnalysisResponse, ProofBuildPlanRequest, ProofPlan } from '../types/proof';
 
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
 
 export async function analyzeProof(data: ProofAnalysisRequest): Promise<ProofAnalysisResponse> {
   const response = await fetch(`${API_BASE_URL}/proof/analyze`, {

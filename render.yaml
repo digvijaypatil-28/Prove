@@ -1,0 +1,26 @@
+services:
+  # ── Backend: FastAPI Web Service ──────────────────────────────────────────
+  - type: web
+    name: prove-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: LLM_PROVIDER
+        value: gemini
+      - key: GEMINI_API_KEY
+        sync: false        # Set this secret in the Render dashboard — never commit it
+      - key: DATABASE_URL
+        value: sqlite:///./prove.db
+
+  # ── Frontend: React Static Site ───────────────────────────────────────────
+  - type: static
+    name: prove-frontend
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false        # Set to: https://prove-backend.onrender.com/api
