@@ -25,7 +25,7 @@ class GeminiProvider(BaseLLMProvider):
             try:
                 import google.generativeai as legacy_genai
                 legacy_genai.configure(api_key=self.api_key)
-                self.client = legacy_genai.GenerativeModel("gemini-2.5-flash")
+                self.client = legacy_genai.GenerativeModel("gemini-3.6-flash")
                 self.mode = "legacy_genai"
             except Exception as e:
                 logger.warning(f"Failed to initialize Gemini client: {e}. Falling back to MockProvider.")
@@ -44,7 +44,7 @@ class GeminiProvider(BaseLLMProvider):
         if not self.client:
             raise RuntimeError("Gemini client not initialized")
 
-        models_to_try = ["gemini-2.0-flash", "gemini-1.5-flash"]
+        models_to_try = ["gemini-3.6-flash"]
         last_err = None
 
         for model_name in models_to_try:

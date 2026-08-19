@@ -109,7 +109,8 @@ class SkillMapper:
             if len(tools) >= 1 and (len(outputs) >= 1 or len(actions) >= 1):
                 conceptual_support = True
 
-        if personal_action_match or (direct_tool_match and len(actions) > 0) or conceptual_support:
+        team_only_for_skill = team_action_match and not personal_action_match
+        if (personal_action_match or (direct_tool_match and len(actions) > 0) or conceptual_support) and not team_only_for_skill:
             status = "PROVEN"
             if has_evidence_links and len(raw_outcomes) > 0:
                 level, level_name = "L4", "Advanced / complex application"
