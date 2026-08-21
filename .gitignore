@@ -53,3 +53,8 @@ dist-ssr/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Local AI project study/knowledge base
+PROJECT_KNOWLEDGE_BASE.md
+PROJECT_STUDY_GUIDE.md
+PROJECT_ARCHITECTURE.md
